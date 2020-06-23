@@ -1,0 +1,31 @@
+BACK-END***********************************
+npm init -y creates package json
+
+express-web frame work/routing
+bcryptjs-hashing passwords
+jsonwebtoken-authenticate token
+config-global variables
+express validator- to validate body data
+mongoose-add,read, delete data and create models
+
+Dev Dependencies
+npm i -D 
+nodemon-keep watching server
+concurrenty-run back and front end at the same time
+
+adding scripts
+"start":'node server.js'
+"server":"nodemon server.js"
+
+SERVER
+1. build simple server(entry point to backend)
+2. npm run server 
+3. needs a get route with req and res to send data
+
+ROUTES
+1. create folder called routes with contacts,users,auth files
+contacts-crud func
+users-register route
+auth-login and auth and route to check logged in users
+2. bring into server.js using app.use
+
