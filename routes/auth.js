@@ -21,7 +21,10 @@ router.post('/',
 check('password','Password is required').exists()
 ],
 (req, res) =>{
-    res.send('Log in user');
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(400).json({ errors: errors.array() });
+    }
 });
 
 
