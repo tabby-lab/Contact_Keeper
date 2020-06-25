@@ -1,5 +1,13 @@
+CREATE GIT REPO
+-.gitignore with node_modules/ in file 
+-git init
+-git add .
+-git commit -m "test"
+-git push
+
 BACK-END***********************************
 npm init -y creates package json
+npm run server 
 
 express-web frame work/routing
 bcryptjs-hashing passwords
@@ -27,5 +35,110 @@ ROUTES
 contacts-crud func
 users-register route
 auth-login and auth and route to check logged in users
-2. bring into server.js using app.use
+2. bring into server.js using app.use for the routes
+
+3.USER
+- bring in express so i can use router
+-bring in router
+-add endpoints
+-export
+
+4.AUTH 
+-bring in router
+-same as user (copy paste)
+-get request instead
+-private access
+-also needs get request for public access
+
+5.CONTACT 
+-CRUD so we need 4 routes
+-copy from user and paste
+-get request which gets users contaacts all of these are private
+-post request to add contacts(copy paste change to post)
+-put request which involves id update contacts
+-delete same thing with id
+
+USE POSTMAN TO CHECK ALL 
+
+6.CONNECT MONGODB TO APP 
+-create config folder in main root
+-inside create default.json (for global variables)
+-mongoURI in VS CODE and add from mongodb -> 
+connect ->connect to app -> copy and paste into VS -> add password
+-inside config folder add db.js (uses mongoose to connect
+to database)
+-bring in mongoose and config
+-const db to get mongoURI 
+-create a function connectDB 
+-gives a promise so .then in console log 
+-then .catch to catch error
+-could use aysnc await as well instead of then and catch
+-module exports connect DB
+-bring in connect DB IN SERVER and call it
+-should say mongoDB connected in terminal(:
+
+7.USER MODEL & VALIDATION
+-create a models folder and put User.js and files
+-USER.JS make a schema with name,email,password,and date
+-bring User into users.js route 
+-to use body we need to create a middleware in server.js 
+-POSTMAN check with POST request to port 500/api/users->
+headers with content type and value of application/json->
+go to body with raw format->type in {} with json data of name and email
+-need to bring in express validator to users
+-then check name email password
+-set error
+-then check on postman with one of them see if error wokrs
+
+8.HASH PASSWORD 
+-in users.js we need to destructor name email and password
+from req.body with a try catch dealing with bcrypt and database
+-(try)find a user based on feild(email)
+-(if) user exist then return response alredy exist
+-user=new user if not
+-salt to encrpyt password
+-user with password = hash with plain text password and salt
+-save
+-bring in bcrypt at the top of code
+-res.send to test it 
+-(catch) error and console error
+-TEST ON POSTMAN
+-MAKE SURE USER WAS SAVED IN COLLECTIONS IN MONGODB make sure 
+it has id and crypt pw etc 
+
+9.CREATE & RESPOND WITH JSON WEB TOKEN 
+-JWT website
+-payload=data
+-in users.js bring in JWT
+-after save () create payload with user id 
+-to generate the token we have to sign with payload and secret
+-we dont want the secret to show so we put that in default.json 
+-to use the secret bring in config in users.js
+-TEST IN POSTMAN see if token is there
+-take token test in JWT website to get id 
+
+10.AUTHENTICATE ROUTE
+-routes/auth.js
+-bringing in a lot of things from users.js
+-start with authenticating user->check email->check password
+-add error checking make aysnc 
+-take email and password out of body (destructor)
+-try/catch with await 
+-use const isMatch to check password
+-if does match use payload and sign from users and paste in auth 
+-TEST IN POSTMAN:new collection contact keeper api and file users and auth 
+save as register user.
+-post request /auth in postman 
+-header content type and application back to body raw and test email and password
+-save login user on postman 
+
+11.MIDDLEWARE AND PROTECTING ROUTES 
+
+
+SIDE NOTES
+HDP methods:
+-post-submitting to server
+-get-fetch data from server
+-delete-delete
+-put-update from server
 
