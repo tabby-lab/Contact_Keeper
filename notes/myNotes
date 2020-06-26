@@ -171,8 +171,15 @@ FRONT END********************************************
 -go to package-json in back end
 -add client(prefix in client),clientinstall,dev is going to run both
 -add proxy in client json package 
--
+-npm run dev
 
+2.CLEANUP
+-delete gitignore and readme
+-get rid of git repo by cd client then run rm -rf .git 
+-then cd .. back to root
+-added all the things in gitignore files(not neccessary though)
+-cd into client and npm i and install some dependencies (axios,react-router-dom, uuid, react-transition-group)
+-
 
 
 SIDE NOTES
