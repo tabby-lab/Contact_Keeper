@@ -133,6 +133,31 @@ save as register user.
 -save login user on postman 
 
 11.MIDDLEWARE AND PROTECTING ROUTES 
+-create a middleware folder and file called auth.js
+-middleware is a func that has access to req and res cycle/obj
+-check to see if there is a token in header
+-bring in jwt and config
+-module exports have to call next after req and res 
+-get token from header
+-check if not token
+-try catch / verify
+
+-test in auth.js 
+-ANYTIME A ROUTE NEEDS TO BE PROTECTED bring in middleware
+-bring in auth ../middleware/auth
+-pass in auth as a second param 
+-try catch
+-in POSTMAN check: key is x-auth-token and value is the sercet token 
+-data will return 
+-save as get logged in user postman 
+-should have 3 (register user,login user, and now get logged in user)
+
+12.CONTACT MODEL AND CONTACT ROUTES
+-copy from user model and put in contact/change stuff
+-routes->contact.js ->bring in validation,middleware,and contact model
+-2nd param of auth to make it protected 
+
+
 
 
 SIDE NOTES
@@ -141,4 +166,4 @@ HDP methods:
 -get-fetch data from server
 -delete-delete
 -put-update from server
-
+-Errors 401,500,400
