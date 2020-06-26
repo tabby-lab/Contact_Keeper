@@ -162,8 +162,16 @@ save as register user.
 -POSTMAN TEST ALL
 
 13.CONTACT UPDATE AND delete
--
+-copy paste update and change some things
+-test on postman 
 
+FRONT END********************************************
+1.SET UP AND CONCURRENTLY
+-npx create-react-app client
+-go to package-json in back end
+-add client(prefix in client),clientinstall,dev is going to run both
+-add proxy in client json package 
+-
 
 
 
@@ -174,3 +182,5 @@ HDP methods:
 -delete-delete
 -put-update from server
 -Errors 401,500,400,404
+
+backend express api that serves json and takes tokens
