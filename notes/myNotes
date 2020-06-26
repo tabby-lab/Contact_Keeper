@@ -159,6 +159,10 @@ save as register user.
 -pull from database so need a try catch bc mongoose
 -POSTMAN TEST make get req to api/contacts with header x-auth-token with the token
 -should show as empty array bc we dont have any contacts yet
+-POSTMAN TEST ALL
+
+13.CONTACT UPDATE AND delete
+-
 
 
 
