@@ -155,7 +155,10 @@ save as register user.
 12.CONTACT MODEL AND CONTACT ROUTES
 -copy from user model and put in contact/change stuff
 -routes->contact.js ->bring in validation,middleware,and contact model
--2nd param of auth to make it protected 
+-2nd param of auth to make it protected for the router.get
+-pull from database so need a try catch bc mongoose
+-POSTMAN TEST make get req to api/contacts with header x-auth-token with the token
+-should show as empty array bc we dont have any contacts yet
 
 
 
