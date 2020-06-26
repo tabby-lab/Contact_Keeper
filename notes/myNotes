@@ -173,4 +173,4 @@ HDP methods:
 -get-fetch data from server
 -delete-delete
 -put-update from server
--Errors 401,500,400
+-Errors 401,500,400,404
