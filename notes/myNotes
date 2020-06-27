@@ -179,7 +179,7 @@ FRONT END********************************************
 -then cd .. back to root
 -added all the things in gitignore files(not neccessary though)
 -cd into client and npm i and install some dependencies (axios,react-router-dom, uuid, react-transition-group)
--
+-css file from udemy replaced
 
 
 SIDE NOTES
