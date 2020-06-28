@@ -227,7 +227,19 @@ import uuid , contactcontext, contactreducer, and types (addcontact,delet etc)
 -now we have access to state
 
 4.CONTACTS & CONTACTITEM COMPONENTS 
--
+-inside components folder contacts and file called Contacts.js and Contactitem.js
+-WHAT WE WANT TO DO pull in contacts from the state into the contacts component then map thorugh them create a list and output a contact item for one
+-Start in Contacts.js rafc and bring in contactcontext and use fragment  useContext hook from react 
+-initialize contactContext 
+-destructor from contactContext {contacts}
+-use fragment
+-map through contact array output name
+-go to home.js and bring in Contacts bc thats where we want to display
+-two column grids
+-ContactForm and Contacts components
+*that part is confusing*
+
+
 
 
 
