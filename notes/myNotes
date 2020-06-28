@@ -173,13 +173,64 @@ FRONT END********************************************
 -add proxy in client json package 
 -npm run dev
 
-2.CLEANUP
+2.CLEANUP/NAVBAR & ROUTER SETUP
 -delete gitignore and readme
 -get rid of git repo by cd client then run rm -rf .git 
 -then cd .. back to root
 -added all the things in gitignore files(not neccessary though)
--cd into client and npm i and install some dependencies (axios,react-router-dom, uuid, react-transition-group)
+-cd into client and npm i and install some dependencies (axios(hdp client),react-router-dom, uuid, react-transition-group)
+-cd .. back to root and start dev
 -css file from udemy replaced
+-get rid of logo.svg,service worker, index css, 
+app.test,cleanup in index.js,app.js rid logo,change 
+to arrow func in app as well as everything in div, index html rid comments and change title
+-fontawesome cdn in head 
+NAVBAR
+-src folder called components
+-in components folder called layout
+-file in layout called Navbar.js
+-rafc (functional component)
+-two props called title and icon
+-bring in proptypes
+-navbar.proptypes with string is req etc
+-in div pull out icon and title in main div 
+-bring into app.js 
+ROUTER
+-import router-dom in app.js
+-everything in return is surronded by router
+-bring in fragment instead div
+-under navbar we need a container for everything
+-switch in the container 
+-routes with exact paths/ home and about pages
+-bring in home and about pages in app.js
+-go into components and create folder called pages w files home.js and about.js
+-home.js racf/ in div put h1 home
+-about.js racf/ in div put h1 about etc
+-navbar bring in link from react router dom
+-want to use link not aherf
+-link to home and about
+ 
+3.CONTACTS CONTEXT AND GLOBAL STATE 
+-folder in src called CONTEXT
+-types.js file in that folder  (variables to use to deceide what we are doing in our reducer)
+-insie context we need a folder called contact with 3 files context,state,and reducer
+-context is simple/just to initialize 
+-in ContactState file we need to import react with usereducer so we can have access to state and dispatch so we can dispatch from reducer,
+import uuid , contactcontext, contactreducer, and types (addcontact,delet etc)
+-func for contact state to take in props
+-within that have intitial state hard code some contacts
+-pull out this state and dispatch by using useReducer hook
+-then we need all the actions we are going to add
+-in types.js export all action func
+-return provider so we can wrap our whole app with this context
+-go to app.js and bring in contactstate then wrap app in provider 
+-now we have access to state
+
+4.CONTACTS & CONTACTITEM COMPONENTS 
+-
+
+
+
 
 
 
