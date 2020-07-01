@@ -45,6 +45,10 @@ import {
      const [state, dispatch] = useReducer(contactReducer, initialState);
      //ACTIONS TO CREATE
      //ADD CONTACT
+     const addContact = contact => {
+         contact.id = uuid.v4();
+         dispatch({ type: ADD_CONTACT, payload:contact });
+     };
 
      //DELETE CONTACT
 
