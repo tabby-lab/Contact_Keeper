@@ -40,7 +40,8 @@ import {
                 type:"personal"
             
             }
-         ]
+         ],
+         current: null
      };
 
      const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -58,8 +59,16 @@ import {
     };
 
      //SET CURRENT CONTACT
+     const setCurrent = contact => {
+       
+        dispatch({ type: SET_CURRENT, payload: contact });
+    };
 
      //CLEAR CURRENT CONTACT
+     const clearCurrent = () => {
+       
+        dispatch({ type: CLEAR_CURRENT });
+    };
 
      //UPDATE CONTACT
 
