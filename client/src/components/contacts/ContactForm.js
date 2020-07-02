@@ -46,7 +46,7 @@ if(current !== null) {
 
     return (
         <form onSubmit = {onSubmit}>
-            <h2 className="text-primary">Add Contact</h2>
+            <h2 className="text-primary">{current ? 'Edit Contact' : 'Add Contact'}</h2>
             <input 
             type="text"
              placeholder="Name" 
