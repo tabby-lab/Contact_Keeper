@@ -80,8 +80,12 @@ import {
          <ContactContext.Provider 
          value={{
              contacts:state.contacts,
+             current:state.current,
              addContact,
-             deleteContact
+             deleteContact,
+             setCurrent,
+             clearCurrent
+
          }}>
 
              { props.children }
