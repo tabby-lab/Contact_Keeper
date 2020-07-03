@@ -21,7 +21,9 @@ return <h4>Please add a contact</h4>
             </CSSTransition>
            ))
            : contacts.map(contact => (
-               <ContactItem key={contact.id} contact={contact} />
+            <CSSTransition key = {contact.id} timeout={500} classNames="item">
+               <ContactItem contact={contact} />
+               </CSSTransition>
            ))}
            </TransitionGroup>
            </Fragment>
