@@ -3,7 +3,7 @@ import {
     DELETE_CONTACT,
     SET_CURRENT,
     CLEAR_CURRENT,
-    UPDATE_CONTACTS,
+    UPDATE_CONTACT,
     FILTER_CONTACTS,
     CLEAR_FILTER
  } from '../types';
@@ -15,6 +15,13 @@ case ADD_CONTACT:
         ...state,
         contacts: [...state.contacts, action.payload]
     };
+    case UPDATE_CONTACT:
+        return{
+            ...state,
+            contacts:state.contacts.map(contact => contact.id === action.payload.id ? 
+                action.payload : contact)
+            }
+        
     case DELETE_CONTACT:
         return {
             ...state,
@@ -31,6 +38,7 @@ case ADD_CONTACT:
                         ...state,
                         current: null
                     };
+                    
 
          default:
              return state;

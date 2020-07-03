@@ -8,7 +8,7 @@ import {
     DELETE_CONTACT,
     SET_CURRENT,
     CLEAR_CURRENT,
-    UPDATE_CONTACTS,
+    UPDATE_CONTACT,
     FILTER_CONTACTS,
     CLEAR_FILTER
  } from '../types';
@@ -71,6 +71,11 @@ import {
     };
 
      //UPDATE CONTACT
+     const updateContact = contact => {
+       
+        dispatch({ type: UPDATE_CONTACT, payload: contact });
+    };
+
 
      //FILTER CONTACTS
 
@@ -84,7 +89,8 @@ import {
              addContact,
              deleteContact,
              setCurrent,
-             clearCurrent
+             clearCurrent,
+             updateContact
 
          }}>
 
