@@ -1,7 +1,7 @@
 import React, { useContext, useRef, useEffect } from 'react'
 import ContactContext from '../../context/contact/contactContext';
 
-export const ContactFilter = () => {
+const ContactFilter = () => {
     const contactContext = useContext(ContactContext);
     const text = useRef('');
 
@@ -28,3 +28,5 @@ export const ContactFilter = () => {
         </form>
     )
 }
+
+export default ContactFilter;
