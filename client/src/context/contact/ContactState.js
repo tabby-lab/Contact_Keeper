@@ -41,7 +41,8 @@ import {
             
             }
          ],
-         current: null
+         current: null,
+         filtered:null
      };
 
      const [state, dispatch] = useReducer(contactReducer, initialState);
@@ -78,8 +79,18 @@ import {
 
 
      //FILTER CONTACTS
+     const filterContacts = text => {
+       
+        dispatch({ type: FILTER_CONTACTS, payload: text });
+    };
+
 
      //CLEAR FILTER
+
+     const clearFilter = () => {
+       
+        dispatch({ type: CLEAR_FILTER });
+    };
 
      return (
          <ContactContext.Provider 
@@ -90,7 +101,10 @@ import {
              deleteContact,
              setCurrent,
              clearCurrent,
-             updateContact
+             updateContact,
+             filtered: state.filtered,
+             filterContacts,
+             clearFilter
 
          }}>
 
