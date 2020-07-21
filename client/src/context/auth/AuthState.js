@@ -45,7 +45,7 @@ const AuthState = props => {
             headers: {
                 'Content-Type': 'application/json'
             }
-        }
+        };
 
         try {
             const res = await axios.post('/api/users', formData, config);

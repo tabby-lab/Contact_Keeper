@@ -19,7 +19,7 @@ const App = () => {
     <Router>
     <Fragment>
       <Navbar />
-      <div ClassName="container">
+      <div className="container">
         <Alerts />
         <Switch>
           <Route exact path ='/' component={Home} />
