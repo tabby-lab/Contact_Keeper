@@ -3,7 +3,7 @@ import axios from 'axios';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 
-import { 
+import {
     REGISTER_SUCCESS,
     REGISTER_FAIL,
     USER_LOADED,
@@ -12,29 +12,38 @@ import {
     LOGIN_FAIL,
     LOGOUT,
     CLEAR_ERRORS
- } from '../types';
+} from '../types';
 
- const AuthState = props => {
-     const initialState = {
-         token: localStorage.getItem('token'), 
-         isAuthenticated: null,
-         loading: true,
-         user: null,
-         error: null
-     };
+const AuthState = props => {
+    const initialState = {
+        token: localStorage.getItem('token'),
+        isAuthenticated: null,
+        loading: true,
+        user: null,
+        error: null
+    };
 
-     const [state, dispatch] = useReducer(authReducer, initialState);
-     //ACTIONS TO CREATE
-     
-     //LOAD USER
-     const loadUser = () => console.log('loaduser')
-     
+    const [state, dispatch] = useReducer(authReducer, initialState);
+    //ACTIONS TO CREATE
 
-     //REGISTER USER
-     const register = async formData => {
+    //LOAD USER
+    const loadUser = async () => {
+        //@todo - load token into global headers
+
+        try {
+            const res = await axios.get('/api/auth');
+            dispatch({ type: USER_LOADED, payload: res.data });
+        } catch (error) {
+            dispatch({ type: AUTH_ERROR });
+        }
+    };
+
+
+    //REGISTER USER
+    const register = async formData => {
         const config = {
             headers: {
-                'Content-Type':'application/json'
+                'Content-Type': 'application/json'
             }
         }
 
@@ -52,37 +61,38 @@ import {
             });
         }
 
-     }
+    }
 
-     //LOGIN USER
-     const login = () => console.log('login')
+    //LOGIN USER
+    const login = () => console.log('login')
 
-     //LOGOUT
-     const logout = () => console.log('logout')
+    //LOGOUT
+    const logout = () => console.log('logout')
 
-     //CLEAR ERRORS
-     const clearErrors = () => console.log('clear')
+    //CLEAR ERRORS
+    const clearErrors = () => dispatch({ type: CLEAR_ERRORS })
 
 
 
-     return (
-         <AuthContext.Provider 
-         value={{
-            token: state.token,
-            isAuthenticated: state.isAuthenticated,
-            loading: state.loading,
-            user: state.user,
-            error: state.error,
-            register,
-            loadUser,
-            login,
-            logout,
-            clearErrors
-         }}>
+    return (
+        <AuthContext.Provider
+            value={{
+                token: state.token,
+                isAuthenticated: state.isAuthenticated,
+                loading: state.loading,
+                user: state.user,
+                error: state.error,
+                register,
+                loadUser,
+                login,
+                logout,
+                clearErrors,
 
-             { props.children }
-         </AuthContext.Provider>
-     )
- };
+            }}>
 
- export default AuthState; 
+            {props.children}
+        </AuthContext.Provider>
+    )
+};
+
+export default AuthState; 
