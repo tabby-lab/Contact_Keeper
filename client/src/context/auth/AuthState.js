@@ -27,6 +27,8 @@ import {
      //ACTIONS TO CREATE
      
      //LOAD USER
+     const loadUser = () => console.log('loaduser')
+     
 
      //REGISTER USER
      const register = async formData => {
@@ -53,10 +55,13 @@ import {
      }
 
      //LOGIN USER
+     const login = () => console.log('login')
 
      //LOGOUT
+     const logout = () => console.log('logout')
 
      //CLEAR ERRORS
+     const clearErrors = () => console.log('clear')
 
 
 
@@ -67,7 +72,12 @@ import {
             isAuthenticated: state.isAuthenticated,
             loading: state.loading,
             user: state.user,
-            error: state.error
+            error: state.error,
+            register,
+            loadUser,
+            login,
+            logout,
+            clearErrors
          }}>
 
              { props.children }
