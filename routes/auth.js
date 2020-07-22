@@ -41,8 +41,8 @@ async (req, res) =>{
     try {
        let user = await User.findOne({ email });
 
-       if(!user) {
-           return res.status(400).json({ msg: 'Invalid Credentials' });
+       if(user) {
+           return res.status(400).json({ msg: 'User already exists' });
 
        }
        const isMatch = await bcrypt.compare(password, user.password);
