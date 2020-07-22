@@ -30,6 +30,7 @@ import {
              case REGISTER_FAIL:
                  case LOGIN_FAIL:
                     case AUTH_ERROR:
+                        case LOGOUT:
                  localStorage.removeItem('token');
                  return {
                      ...state,
