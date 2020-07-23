@@ -18,7 +18,7 @@ import {
 
  const ContactState = props => {
      const initialState = {
-         contacts:  [],
+         contacts:  null,
          current: null,
          filtered:null,
          error:null
@@ -68,6 +68,14 @@ import {
         dispatch({ type: DELETE_CONTACT, payload:id });
     };
 
+
+    //CLEAR CONTACTS
+    const clearContacts = () => {
+       
+        dispatch({ type: CLEAR_CONTACTS });
+    };
+
+
      //SET CURRENT CONTACT
      const setCurrent = contact => {
        
@@ -115,6 +123,8 @@ import {
              error: state.error,
              filterContacts,
              clearFilter,
+             getContacts,
+             clearContacts
              
          }}>
 
